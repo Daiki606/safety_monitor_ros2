@@ -14,7 +14,7 @@ setup(
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='Daiki Yamashita',
-    maintainer_email='your_email@example.com',
+    maintainer_email='s24c1131sc@s.chibakoudai.jp',
     description='ROS2 node that monitors robot safety zones.',
     license='MIT',
     tests_require=['pytest'],
