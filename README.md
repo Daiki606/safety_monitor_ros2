@@ -103,12 +103,12 @@ d = \sqrt{x^2 + y^2}
 ---
 
 ## 5. 使い方
-07
 
-2. ノードの起動
+
+ノードの起動
 ```ros2 run ros2_safety_monitor safety_node```
 
-## 動作確認例
+## 6. 動作確認例
 
 例1：安全ゾーン内
 
@@ -133,7 +133,7 @@ d = \sqrt{x^2 + y^2}
 
 ```data: "danger"```
 
-## テストについて (pytest)
+## 7. テストについて (pytest)
 ロジック部分は ROS 2 非依存のため pytest でテストできる。
 
 ローカル実行
@@ -149,7 +149,7 @@ GitHub Actions 上でも自動的に:
 が実行されるように設定してある。
 
 
-## ディレクトリ構成
+## 8. ディレクトリ構成
 ```
 safety_monitor_ros2/
  ├── ros2_safety_monitor/
@@ -170,7 +170,7 @@ safety_monitor_ros2/
  └── README.md
 ```
 
-## インストール方法
+## 9. インストール方法
 
 ROS 2 パッケージの標準的な手順に従う：
 
@@ -182,11 +182,11 @@ colcon build
 source install/setup.bash
 ```
 
-## ライセンス
+## 10. ライセンス
 
 本ソフトウェアは MIT License に基づいて公開する。
 詳細は `LICENSE` を参照のこと。
 
 
-## 著作権表示
+## 11. 著作権表示
 © 2025 Daiki Yamashita
