@@ -102,11 +102,33 @@ d = \sqrt{x^2 + y^2}
 
 ---
 
-## 使い方
+## 実行手順
+本パッケージを正しく動作させるためには，3つのターミナルを使用することを推奨する。
+以下に，ROS 2 初心者でも確実に動かせる手順を示す。
 
+---
 
-ノードの起動
+###  Terminal 1：Safety Monitor ノードの起動
+
+1. ターミナルを開く
+2. ワークスペースを読み込む：
+
+```bash
+source ~/ros2_ws/install/setup.bash
+```
+
+3. ノードの起動
 ```ros2 run ros2_safety_monitor safety_node```
+
+起動すると次のようなログが表示される：
+```[INFO] [safety_monitor]: Safety Monitor Node started.```
+
+### Terminal 2：ロボット位置情報の送信（テスト用）
+
+このターミナルでは `/robot_position` に位置データを送信して動作確認を行う。
+
+```source ~/ros2_ws/install/setup.bash```
+
 
 ## 動作確認例
 
@@ -132,6 +154,33 @@ d = \sqrt{x^2 + y^2}
 出力:
 
 ```data: "danger"```
+
+### Terminal 3：Safety Status の確認
+
+Safety Monitor が判定した結果は `/safety_status` に文字列として出力される。
+```
+source ~/ros2_ws/install/setup.bash
+ros2 topic echo /safety_status
+```
+
+出力例：
+
+```
+data: "safe"
+---
+data: "warning"
+---
+data: "danger"
+```
+
+動作イメージ
+
+-Terminal 1 → ノードからのログが流れる
+
+-Terminal 2 → ロボット位置を送信
+
+-Terminal 3 → 判定結果をリアルタイムで表示
+
 
 ## テストについて (pytest)
 ロジック部分は ROS 2 非依存のため pytest でテストできる。
