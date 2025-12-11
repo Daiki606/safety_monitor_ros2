@@ -20,4 +20,3 @@ def get_safety_status(x: float, y: float) -> str:
         return "warning"
     else:
         return "danger"
-
