@@ -1,4 +1,5 @@
-# ros2_safety_monitor
+# safety_monitor_ros2
+
 
 ロボットの2次元位置 `(x, y)` を入力として受け取り，原点を中心とした同心円状の安全ゾーンに基づいて  
 `safe` / `warning` / `danger` のいずれかの安全状態を判定し，トピックとして公開する ROS 2 パッケージである。
