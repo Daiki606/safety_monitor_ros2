@@ -54,8 +54,11 @@ distance = sqrt(x*x + y*y)
 説明: 安全状態を文字列で通知する
 
 -`"safe"`
+
 -`"warning"`
+
 -`"danger"`
+
 
 ## 判定ロジック
 
