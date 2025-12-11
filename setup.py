@@ -21,7 +21,6 @@ setup(
     entry_points={
         'console_scripts': [
             'safety_node = ros2_safety_monitor.safety_node:main',
-            'example_position_publisher = ros2_safety_monitor.example_position_publishe
         ],
     },
 )
