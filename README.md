@@ -45,7 +45,7 @@
 
 ## 使用トピック
 
-## 購読トピック
+### 購読トピック
 
 ### `/robot_position`
 - 型: `geometry_msgs/msg/Point`
