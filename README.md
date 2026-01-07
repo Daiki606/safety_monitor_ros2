@@ -127,7 +127,7 @@ source ~/ros2_ws/install/setup.bash
 
 このターミナルでは `/robot_position` に位置データを送信して動作確認を行う。
 
-```source ~/ros2_ws/install/setup.bash```
+```source ~/your_ws/install/setup.bash```
 
 
 ## 動作確認例
@@ -159,7 +159,7 @@ source ~/ros2_ws/install/setup.bash
 
 Safety Monitor が判定した結果は `/safety_status` に文字列として出力される。
 ```
-source ~/ros2_ws/install/setup.bash
+source ~/your_ws/install/setup.bash
 ros2 topic echo /safety_status
 ```
 
@@ -224,7 +224,7 @@ safety_monitor_ros2/
 ROS 2 パッケージの標準的な手順に従う：
 
 ```
-cd ~/ros2_ws/src
+cd ~/your_ws/src
 git clone https://github.com/Daiki606/safety_monitor_ros2.git
 cd ~/ros2_ws
 colcon build
