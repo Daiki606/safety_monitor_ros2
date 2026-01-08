@@ -218,7 +218,8 @@ safety_monitor_ros2/
  ├── setup.py
  ├── setup.cfg
  ├── LICENSE
- └── README.md
+ ├── README.md
+ └── test_node.sh
 ```
 
 ## インストール方法
