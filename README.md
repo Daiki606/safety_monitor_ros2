@@ -47,16 +47,16 @@
 
 ### 購読トピック
 
-### `/robot_position`
+#### `/robot_position`
 - 型: `geometry_msgs/msg/Point`
 - 説明:
   ロボットの現在位置を表す。`x` と `y` のみを利用し，`z` は使用しない。
 
 ---
 
-## パブリッシュトピック
+### パブリッシュトピック
 
-### `/safety_status`
+#### `/safety_status`
 - 型: `std_msgs/msg/String`
 - 説明: 
   安全状態を文字列として出力する。取りうる値は次の 3 種類である。
@@ -114,8 +114,9 @@ d = \sqrt{x^2 + y^2}
 2. ワークスペースを読み込む：
 
 ```bash
-source ~/ros2_ws/install/setup.bash
+source ~/your_ws/install/setup.bash
 ```
+※ your_ws は任意の ROS 2 ワークスペース名を表す
 
 3. ノードの起動
 ```ros2 run ros2_safety_monitor safety_node```
@@ -134,26 +135,27 @@ source ~/ros2_ws/install/setup.bash
 
 例1：安全ゾーン内
 
-```ros2 topic pub /robot_position geometry_msgs/msg/Point "{x: 2.0, y: 3.0, z: 0.0}"```
+# Publish robot position
+ros2 topic pub /robot_position geometry_msgs/msg/Point "{x: 2.0, y: 3.0, z: 0.0}"
 
-`/safety_status 出力:`
-```data: "safe"```
+# 出力:
+# data: "safe"
 
 例2：warning ゾーン
 
-```ros2 topic pub /robot_position geometry_msgs/msg/Point "{x: 7.0, y: 1.0, z: 0.0}"```
+# Publish robot position
+ros2 topic pub /robot_position geometry_msgs/msg/Point "{x: 7.0, y: 1.0, z: 0.0}"
 
-出力:
-
-```data: "warning"```
+# 出力:
+# data: "warning"
 
 例3：danger ゾーン
 
-```ros2 topic pub /robot_position geometry_msgs/msg/Point "{x: 10.5, y: 0.0, z: 0.0}"```
+# Publish robot position
+ros2 topic pub /robot_position geometry_msgs/msg/Point "{x: 10.5, y: 0.0, z: 0.0}"
 
-出力:
-
-```data: "danger"```
+# 出力:
+# data: "danger"
 
 ### Terminal 3：Safety Status の確認
 
