@@ -133,29 +133,38 @@ source ~/your_ws/install/setup.bash
 
 ## 動作確認例
 
-例1：安全ゾーン内
 
-#### Publish robot position
+#### 例1：安全ゾーン内
+
 ros2 topic pub /robot_position geometry_msgs/msg/Point "{x: 2.0, y: 3.0, z: 0.0}"
 
  出力:
+ ```
  data: "safe"
+```
 
-例2：warning ゾーン
+ 
 
-#### Publish robot position
+#### 例2：warning ゾーン
+
 ros2 topic pub /robot_position geometry_msgs/msg/Point "{x: 7.0, y: 1.0, z: 0.0}"
 
  出力:
+ ```
  data: "warning"
+```
 
-例3：danger ゾーン
 
-#### Publish robot position
+
+####  例3：danger ゾーン
+
 ros2 topic pub /robot_position geometry_msgs/msg/Point "{x: 10.5, y: 0.0, z: 0.0}"
 
  出力:
+ ```
  data: "danger"
+```
+ 
 
 ### Terminal 3：Safety Status の確認
 
