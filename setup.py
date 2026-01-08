@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+
 from setuptools import setup
 
 package_name = 'ros2_safety_monitor'
