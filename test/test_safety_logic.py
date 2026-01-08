@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+
 from ros2_safety_monitor.safety_logic import get_safety_status
 
 
