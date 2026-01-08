@@ -110,15 +110,15 @@ d = \sqrt{x^2 + y^2}
 
 ###  Terminal 1：Safety Monitor ノードの起動
 
-1. ターミナルを開く
-2. ワークスペースを読み込む：
+#### 1. ターミナルを開く
+#### 2. ワークスペースを読み込む：
 
 ```bash
 source ~/your_ws/install/setup.bash
 ```
 ※ your_ws は任意の ROS 2 ワークスペース名を表す
 
-3. ノードの起動
+#### 3. ノードの起動
 ```ros2 run ros2_safety_monitor safety_node```
 
 起動すると次のようなログが表示される：
