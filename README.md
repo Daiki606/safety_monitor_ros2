@@ -173,15 +173,6 @@ data: "warning"
 data: "danger"
 ```
 
-動作イメージ
-
--Terminal 1 → ノードからのログが流れる
-
--Terminal 2 → ロボット位置を送信
-
--Terminal 3 → 判定結果をリアルタイムで表示
-
-
 ## テストについて (pytest)
 ロジック部分は ROS 2 非依存のため pytest でテストできる。
 
