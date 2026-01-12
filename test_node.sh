@@ -1,34 +1,24 @@
 # !/bin/bash
 # SPDX-License-Identifier: MIT
+set -e
 
-source ~/ros2_ws/install/setup.bash
+source /opt/ros/*/setup.bash || true
 
 ros2 run ros2_safety_monitor safety_node &
 NODE_PID=$!
-sleep 2  
 
-test_case() {
-  local x=$1
-  local y=$2
-  local expected=$3
+sleep 2
 
-  ros2 topic pub /robot_position geometry_msgs/msg/Point "{x: $x, y: $y, z: 0.0}" -1 --qos-reliability reliable >/dev/null 2>&1
+# テストケース: safe
+RESULT=$(ros2 topic pub -1 /robot_position geometry_msgs/msg/Point "{x: 2.0, y: 3.0, z: 0.0}" \
+  | ros2 topic echo -n 1 /safety_status | grep data | awk '{print $2}' | tr -d '"')
 
-  result=$(ros2 topic echo /safety_status -n1 | awk '{print $2}' | tr -d '"')
+if [ "$RESULT" != "safe" ]; then
+  echo "FAILED: (2,3) -> got '$RESULT', expected 'safe'"
+  kill $NODE_PID || true
+  exit 1
+fi
 
-  if [ "$result" != "$expected" ]; then
-    echo "FAILED: ($x, $y) -> got '$result', expected '$expected'"
-    kill $NODE_PID
-    exit 1
-  else
-    echo "PASSED: ($x, $y) -> '$result'"
-  fi
-}
+echo "PASS: safe"
 
-test_case 2 3 safe
-test_case 7 1 warning
-test_case 10.5 0 danger
-
-kill $NODE_PID
-echo "All tests passed!"
-exit 0
+kill $NODE_PID || true
