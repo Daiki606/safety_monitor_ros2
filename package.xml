@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <package format="3">
   <name>ros2_safety_monitor</name>
+  <license>MIT</license>
   <version>0.0.1</version>
   <description>Safety zone monitoring node for robot positions.</description>
 
